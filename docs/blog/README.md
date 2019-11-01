@@ -1,0 +1,3 @@
+---
+homeBlog: true
+---
