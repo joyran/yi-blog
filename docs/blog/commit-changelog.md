@@ -7,11 +7,11 @@ date: 2019-12-17
 
 下面贴一张我们团队在一开始的时候 commit 记录，是不是有点懵。
 
-![xx](/commit.jpg)
+![commit](https://apply-public-cdn.wezhuiyi.com/a186b9c9-5a9f-1577686278447.jpg)
 
 下面贴一张大厂的 commit 记录，是不是一目了然很清晰。
 
-![xx](/angular-commit.jpg)
+![commit](https://apply-public-cdn.wezhuiyi.com/61738060-47ad-1577686272299.jpg)
 
 那靠团队的口头约束能写出这样的 commit 记录吗，显然是不可能的，好在可以用`commitlint`来规范 commit message。
 
@@ -108,7 +108,7 @@ yarn add standard-version --save-dev
 
 默认情况下会把 commit 中 type 为 feat 的记录生成需求 log，fix 生成 bug 修复。
 
-![xx](/changelog.jpg)
+![changelog](https://apply-public-cdn.wezhuiyi.com/aa21c108-8b44-1577686275596.jpg)
 
 standard-version 也提供了可配置属性，[conventional-changelog-config-spec](https://github.com/conventional-changelog/conventional-changelog-config-spec/blob/master/versions/2.1.0/README.md)。
 
