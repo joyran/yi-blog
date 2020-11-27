@@ -9,7 +9,7 @@ date: 2020-11-25
 
 <!-- more -->
 
-正式介绍之前先来看一看最终呈现的效果，mock 数据本来用的是 `easy-mock`，不过动不动就访问不了也没辙，还好找到了一个[镜像站点](http://mock.jszhong.top/)。[yi-table 源码](https://github.com/joyran/yi-blog/blob/master/docs/.vuepress/components/YiTable.vue)，[yi-table-demo 源码](https://github.com/joyran/yi-blog/blob/master/docs/.vuepress/components/YiTableDemo.vue)。
+正式介绍之前先来看一看最终呈现的效果，mock 数据用的是 `easy-mock`，不过经常性挂掉没辙，找到了一个[镜像站点](http://mock.jszhong.top/) 但是又不支持 `https`，也只能放弃了，硬着头皮用 `easy-mock` 吧。[yi-table 源码](https://github.com/joyran/yi-blog/blob/master/docs/.vuepress/components/YiTable.vue)，[yi-table-demo 源码](https://github.com/joyran/yi-blog/blob/master/docs/.vuepress/components/YiTableDemo.vue)。
 
 <YiTableDemo />
 

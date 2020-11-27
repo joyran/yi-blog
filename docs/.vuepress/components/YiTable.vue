@@ -125,12 +125,15 @@ export default {
   methods: {
     async getData () {
       this.fetching = true
-      const { data } = await axios.get(this.url, {
-        params: this.queryParams
-      })
-      this.dataSource = data.data.list
-      this.dataTotal = data.data.total
-      this.fetching = false
+      axios.get(this.url, { params: this.queryParams })
+        .then(res => {
+          this.dataSource = res.data.data.list
+          this.dataTotal = res.data.data.total
+          this.fetching = false
+        })
+        .catch(() => {
+          this.fetching = false
+        })
     },
 
     pageChange () {

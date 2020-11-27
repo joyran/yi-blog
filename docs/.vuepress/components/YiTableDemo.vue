@@ -14,7 +14,7 @@ export default {
 
   data () {
     return {
-      url: 'http://mock.jszhong.top/mock/5fbf59becdc5d532a510715d/api/users',
+      url: 'https://www.easy-mock.com/mock/5fbe00821bc0682deacbfe38/api/users',
       columns: [{
         prop: 'name',
         label: '姓名'
