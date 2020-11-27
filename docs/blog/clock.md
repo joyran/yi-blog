@@ -20,8 +20,8 @@ date: 2019-10-30
 }
 </style>
 
-[CSS 时钟源码](https://github.com/joyran/yi-blog/blob/master/docs/.vuepress/components/Demo/Clock.vue)
-[Canvas 时钟源码](https://github.com/joyran/yi-blog/blob/master/docs/.vuepress/components/Demo/ClockCanvas.vue)
+[CSS 时钟源码](https://github.com/joyran/yi-blog/blob/master/docs/.vuepress/components/ClockCss.vue)
+[Canvas 时钟源码](https://github.com/joyran/yi-blog/blob/master/docs/.vuepress/components/ClockCanvas.vue)
 
 接下来挑重点讲解下实现过程中一些我认为的难点😂，大神请略过。
 

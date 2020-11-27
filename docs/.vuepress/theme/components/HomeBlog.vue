@@ -2,8 +2,7 @@
 <template lang="html">
   <div class="theme-default-content">
     <div v-for="(page, index) in pages" :key="index">
-      <!-- 只渲染 frontmatter 中包含 title 的文章 -->
-      <div v-if="page.frontmatter.title" class="blog">
+      <div class="blog" v-if="page.frontmatter.show !== false">
         <p class="title">
           <router-link :to="{ path: page.path }">{{ page.title }}</router-link>
         </p>
@@ -29,7 +28,11 @@ export default {
   },
 
   mounted () {
-    this.pages = this.$site.pages.filter(v => v.frontmatter.title)
+    // 时间倒序
+    const pages = this.$site.pages.filter(v => v.frontmatter.title)
+    pages.map(v => v.date = new Date(v.frontmatter.date).getTime())
+    pages.sort((a, b) => b.date - a.date)
+    this.pages = pages
   },
 
   filters: {

@@ -9,13 +9,16 @@
     "deploy": "bash deploy.sh"
   },
   "dependencies": {
+    "async-validator": "1.11.5",
+    "axios": "^0.21.0",
+    "element-ui": "^2.14.1",
     "moment": "^2.24.0"
   },
   "devDependencies": {
-    "node-sass": "^4.13.0",
-    "sass-loader": "^8.0.0",
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
-    "vuepress": "^1.2.0"
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.0",
+    "vuepress": "1.7.1"
   }
 }

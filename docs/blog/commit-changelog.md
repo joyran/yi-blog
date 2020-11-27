@@ -13,7 +13,7 @@ date: 2019-12-17
 
 ![commit](https://apply-public-cdn.wezhuiyi.com/61738060-47ad-1577686272299.jpg)
 
-那靠团队的口头约束能写出这样的 commit 记录吗，显然是不可能的，好在可以用`commitlint`来规范 commit message。
+那靠团队的口头约束能写出这样的 commit 记录吗，显然是不可能的，好在可以用 `commitlint` 来规范 commit message。
 
 ```bash
 # 安装依赖
@@ -171,4 +171,51 @@ git push --tags
 "scripts": {
   "release": "bash release.sh"
 }
+```
+
+测试环境下发布不需要打 tag 和生成 CHANGELOG.md，可以在 release.sh 中判断 git 分支，比如 master 为生产发布环境，dev 为测试环境。
+
+```bash
+#!/usr/bin/env sh
+
+# 确保脚本抛出遇到的错误
+set -e
+
+# 读取当前分支
+branch=`git symbolic-ref --short HEAD`
+
+if [ "$branch" = "master" ]; then
+  # 编译
+  yarn build
+
+  # 提交编译后的文件
+  git add -A
+  git commit -m "chore(build): 打包编译"
+
+  # 生成 CHANGELOG.md，修改版本号，打上版本号的 tag
+  yarn standard
+
+  # 发布
+  git push
+
+  # 提交所有 tag
+  git push --tags
+
+elif  [ "$branch" = "dev" ]; then
+  # dev分支不打tag，也不生成CHANGELOG.md
+
+  # 编译
+  yarn build
+
+  # 提交编译后的文件
+  git add -A
+  git commit -m "chore(release): dev"
+
+  # 上传远程仓库
+  git push origin dev
+
+else
+  # 其他分支直接退出
+  echo -e "\033[31m 只能在 master 或者 dev 分支上执行 yarn release！ \033[0m"
+fi
 ```
