@@ -13,7 +13,7 @@ export default {
     }
   },
 
-  created () {
+  mounted () {
     this.mode = window.localStorage.getItem('theme-mode') || 'light'
   },
 
