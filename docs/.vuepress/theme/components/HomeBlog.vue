@@ -14,13 +14,18 @@
         </div>
       </div>
     </div>
+
+    <ThemeChange />
   </div>
 </template>
 
 <script>
 import moment from 'moment'
+import ThemeChange from './ThemeChange'
 
 export default {
+  components: { ThemeChange },
+
   data () {
     return {
       pages: []
@@ -46,7 +51,7 @@ export default {
 <style lang="scss" scoped>
 .blog {
   padding-bottom: 2rem;
-  border-bottom: 1px solid #ebebeb;
+  border-bottom: 1px solid var(--color-border);
 
   .title {
     margin: 1rem 0;
@@ -55,7 +60,7 @@ export default {
       font-size: 2rem;
       font-weight: 600;
       line-height: 1.6;
-      color: #2c3e50;
+      color: var(--color-text);
 
       &:hover {
         text-decoration: none;

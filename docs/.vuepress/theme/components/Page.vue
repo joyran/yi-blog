@@ -13,15 +13,18 @@
     <PageNav v-bind="{ sidebarItems }" />
 
     <slot name="bottom" />
+
+    <ThemeChange />
   </main>
 </template>
 
 <script>
 import PageEdit from '@theme/components/PageEdit.vue'
 import PageNav from '@theme/components/PageNav.vue'
+import ThemeChange from '@theme/components/ThemeChange.vue'
 
 export default {
-  components: { PageEdit, PageNav },
+  components: { PageEdit, PageNav, ThemeChange },
   props: ['sidebarItems']
 }
 </script>
@@ -30,13 +33,14 @@ export default {
 @require '../styles/wrapper.styl'
 
 .page
-  padding-bottom 2rem
-  display block
+  padding-bottom: 2rem
+  display: block
+  background: var(--color-background)
 
 .page-header
   max-width: 740px
-  padding: 0 2.5rem
-  margin: 5rem auto -3.6rem;
+  padding: 5.6rem 2.5rem 0
+  margin: 0 auto -3.6rem
   @media (max-width: $MQMobileNarrow)
     padding: 1.5rem
     margin: 3rem auto -5rem;

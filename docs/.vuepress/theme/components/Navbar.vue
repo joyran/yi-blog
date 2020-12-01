@@ -92,6 +92,7 @@ $navbar-horizontal-padding = 1.5rem
 .navbar
   padding $navbar-vertical-padding $navbar-horizontal-padding
   line-height $navbarHeight - 1.4rem
+  background-color var(--color-background)
   a, span, img
     display inline-block
   .logo
@@ -102,7 +103,7 @@ $navbar-horizontal-padding = 1.5rem
   .site-name
     font-size 1.3rem
     font-weight 600
-    color $textColor
+    color var(--color-text)
     position relative
   .links
     padding-left 1.5rem
@@ -114,6 +115,7 @@ $navbar-horizontal-padding = 1.5rem
     right $navbar-horizontal-padding
     top $navbar-vertical-padding
     display flex
+    background-color var(--color-background)
     .search-box
       flex: 0 0 auto
       vertical-align top

@@ -22,8 +22,10 @@ export default {
 .index {
   position: relative;
   overflow: hidden;
-  background: rgba(77, 50, 221, 0.74);
+  background-image: linear-gradient(to right, #cc00ff, #767dec);
+  filter: hue-rotate(0deg);
   height: 100vh;
+  animation: hueRotate 20s infinite alternate;
 
   img {
     height: 100%;
@@ -56,5 +58,10 @@ export default {
       position: relative;
     }
   }
+}
+
+@keyframes hueRotate {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
 }
 </style>

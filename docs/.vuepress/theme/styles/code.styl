@@ -1,10 +1,10 @@
 {$contentClass}
   code
-    color #ff502c
+    color var(--color-code)
     padding 0.25rem 0.35rem
     margin 0
     font-size 0.85em
-    background-color #fff5f5
+    background-color var(--color-code-background)
     border-radius 3px
     .token
       &.deleted
@@ -28,7 +28,7 @@
 
 div[class*="language-"]
   position relative
-  background-color $codeBgColor
+  background-color var(--color-pre-background)
   border-radius 6px
   .highlight-lines
     user-select none

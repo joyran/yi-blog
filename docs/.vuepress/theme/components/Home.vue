@@ -105,7 +105,7 @@ export default {
       &:hover
         background-color lighten($accentColor, 10%)
   .features
-    border-top 1px solid $borderColor
+    border-top 1px solid var(--color-border)
     padding 1.2rem 0
     margin-top 2.5rem
     display flex
@@ -127,7 +127,7 @@ export default {
       color lighten($textColor, 25%)
   .footer
     padding 2.5rem
-    border-top 1px solid $borderColor
+    border-top 1px solid var(--color-border)
     text-align center
     color lighten($textColor, 25%)
 
