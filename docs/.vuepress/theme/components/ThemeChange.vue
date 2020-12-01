@@ -35,8 +35,7 @@ export default {
           document.body.style.setProperty('--color-code-background', '#fff5f5');
           document.body.style.setProperty('--color-theme-background', '#FFFFFF');
         }
-      },
-      immediate: true
+      }
     }
   },
 
