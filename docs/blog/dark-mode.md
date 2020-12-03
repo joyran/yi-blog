@@ -116,7 +116,7 @@ styles.forEach((style) => {
 
 ### CSS 变量
 
-目前 css 变量在主流浏览器上都已经支持了，当然除了IE，我个人最推荐的当属 css 变量了。[css 变量](http://www.ruanyifeng.com/blog/2017/05/css-variables.html)，我自己的博客主题切换也是用 css 变量实现的。
+目前 css 变量在主流浏览器上都已经支持了，当然除了IE，我个人最推荐的当属[css 变量](http://www.ruanyifeng.com/blog/2017/05/css-variables.html)了，我自己的博客主题切换也是用 css 变量实现的。
 
 ![](https://img-cdn.wezhuiyi.com/yi-blog/css-variables.jpg)
 
