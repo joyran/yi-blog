@@ -5,11 +5,15 @@ date: 2020-11-25
 
 中后台业务开发中表格算是用的最高频的组件之一了，表格通常还会搭配过滤组件、搜索组件、分页组件等，那么我们封装的组件 `yi-table` 得包含下面几个功能。
 
-[[toc]]
+- 数据自动获取和刷新
+- 自定义列配置
+- 加载中状态、空状态
+- 分页
+- 搜索、过滤
 
 <!-- more -->
 
-正式介绍之前先来看一看最终呈现的效果，mock 数据用的是 `easy-mock`，不过经常性挂掉没辙，找到了一个[镜像站点](http://mock.jszhong.top/) 但是又不支持 `https`，也只能放弃了，硬着头皮用 `easy-mock` 吧。[yi-table 源码](https://github.com/joyran/yi-blog/blob/master/docs/.vuepress/components/YiTable.vue)，[yi-table-demo 源码](https://github.com/joyran/yi-blog/blob/master/docs/.vuepress/components/YiTableDemo.vue)。
+正式介绍之前先来看一看最终呈现的效果，mock 数据用的是 `easy-mock`，不过经常性挂掉没辙，找到了一个[镜像站点](http://mock.jszhong.top/) 但是又不支持 `https`，也只能放弃了，硬着头皮用 `easy-mock` 吧，如果接口挂了还请谅解。[yi-table 源码](https://github.com/joyran/yi-blog/blob/master/docs/.vuepress/components/YiTable.vue)，[yi-table-demo 源码](https://github.com/joyran/yi-blog/blob/master/docs/.vuepress/components/YiTableDemo.vue)。
 
 <YiTableDemo />
 

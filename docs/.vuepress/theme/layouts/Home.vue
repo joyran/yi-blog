@@ -3,7 +3,7 @@
   <div class="index">
     <!-- <img alt="" :src="$withBase('/home.jpg')"> -->
     <div class="body">
-      <router-link class="button" :to="{ path: '/blog/' }">进入</router-link>
+      <router-link class="button" :to="{ path: '/blog/' }">HELLO</router-link>
     </div>
   </div>
 </template>
