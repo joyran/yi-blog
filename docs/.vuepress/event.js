@@ -34,11 +34,13 @@ export default class Event {
     })
   }
 
-  off (eventName) {
-    if (eventName) {
-      delete this.events[eventName]
-    } else {
-      this.events = {}
+  off (eventName, callback) {
+    if (this.events[eventName]) {
+      if (callback) {
+        this.events[eventName] = this.events[eventName].filter(v => v.handler !== callback)
+      } else {
+        delete this.events[eventName]
+      } 
     }
   }
 }

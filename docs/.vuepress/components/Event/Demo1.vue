@@ -17,8 +17,8 @@ export default {
   },
 
   created () {
-    this.$event.once('send', message => {
-      this.list.unshift(message)
+    this.$event.on('send', message => {
+      this.list.push(message)
     })
   }
 }

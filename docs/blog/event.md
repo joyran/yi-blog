@@ -33,8 +33,8 @@ this.$event.$emit('eventName', 'this is a message')
 
 ### 事件总线
 
-既然是事件总线，那是不是得有一个总线来存储所有事件呢，定义这个总线名为 `events`，每一个事件是总线 `events` 的一个 `key`，
-监听的函数作为 `key` 的值。
+既然是事件总线，那是不是得有一个总线来存储所有事件呢，定义这个总线名为 `events`，
+每一个事件是总线 `events` 的一个 `key`，监听的函数作为 `key` 的值。
 
 ```js
 // 这是一个事件总线例子
@@ -117,14 +117,16 @@ emit (eventName, ...args) {
 
 ### 事件销毁
 
-事件销毁其实就是在总线 `events` 中删除对应的事件，如果不传参则删除所有事件。
+事件销毁其实就是在总线 `events` 中删除对应的事件，如果传递了函数，则删除对应的函数
 
 ```js
-off (eventName) {
-  if (eventName) {
-    delete this.events[eventName]
-  } else {
-    this.events = {}
+off (eventName, callback) {
+  if (this.events[eventName]) {
+    if (callback) {
+      this.events[eventName] = this.events[eventName].filter(v => v.handler !== callback)
+    } else {
+      delete this.events[eventName]
+    } 
   }
 }
 ```
@@ -133,7 +135,7 @@ off (eventName) {
 
 单次注册事件其实就是给改事件加一个 `once` 标志，在 `emit` 触发后删除即可，那样后续无论怎么 `emit` 都触发不到了。
 
-```js
+```js {16-18}
 once (eventName, callback) {
   if (!this.events[eventName]) {
     this.events[eventName] = []
@@ -172,6 +174,11 @@ this.$event.on('eventName', (arg) => {
 /* 触发事件 */
 this.$event.emit('eventName', 'this is a message')
 ```
+
+:::warning
+注意：事件总线针对同名事件会重复注册的，也不会自动销毁，如果不注意的话来回切换页面会导致一个事件被注册多次，
+触发的时候也会触发多次，解决方案是在 destroyed 中销毁事件。
+:::
 
 那在 Vuepress 中怎么引用呢？新建一个 `docs\.vuepress\enhanceApp.js` 文件然后复制下面代码。
 
