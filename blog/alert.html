@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>自定义 Alert + Confirm | 梦了然然</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <link rel="/shortcut icon" href="/yi-blog/favicon.png">
+    <meta name="description" content="梦了然然">
+    
+    <link rel="preload" href="/yi-blog/assets/css/0.styles.25f00920.css" as="style"><link rel="preload" href="/yi-blog/assets/js/app.6f6874a9.js" as="script"><link rel="preload" href="/yi-blog/assets/js/4.717f7ba6.js" as="script"><link rel="preload" href="/yi-blog/assets/js/2.6b638d4f.js" as="script"><link rel="preload" href="/yi-blog/assets/js/43.b92a27c6.js" as="script"><link rel="preload" href="/yi-blog/assets/js/35.ed2f2d72.js" as="script"><link rel="prefetch" href="/yi-blog/assets/js/10.e0ccc183.js"><link rel="prefetch" href="/yi-blog/assets/js/11.436d186b.js"><link rel="prefetch" href="/yi-blog/assets/js/12.79a81333.js"><link rel="prefetch" href="/yi-blog/assets/js/13.c7cfd8f8.js"><link rel="prefetch" href="/yi-blog/assets/js/14.5b360613.js"><link rel="prefetch" href="/yi-blog/assets/js/15.d53edd17.js"><link rel="prefetch" href="/yi-blog/assets/js/16.5af8f676.js"><link rel="prefetch" href="/yi-blog/assets/js/17.afa5609b.js"><link rel="prefetch" href="/yi-blog/assets/js/18.12fc860a.js"><link rel="prefetch" href="/yi-blog/assets/js/19.9ef67c78.js"><link rel="prefetch" href="/yi-blog/assets/js/20.54560291.js"><link rel="prefetch" href="/yi-blog/assets/js/21.436aba33.js"><link rel="prefetch" href="/yi-blog/assets/js/22.61a8d35d.js"><link rel="prefetch" href="/yi-blog/assets/js/23.674e979e.js"><link rel="prefetch" href="/yi-blog/assets/js/24.1803b8aa.js"><link rel="prefetch" href="/yi-blog/assets/js/25.38ae7861.js"><link rel="prefetch" href="/yi-blog/assets/js/26.499c2604.js"><link rel="prefetch" href="/yi-blog/assets/js/27.467810ae.js"><link rel="prefetch" href="/yi-blog/assets/js/28.f0843f77.js"><link rel="prefetch" href="/yi-blog/assets/js/29.0a19bbce.js"><link rel="prefetch" href="/yi-blog/assets/js/3.ea3df8b1.js"><link rel="prefetch" href="/yi-blog/assets/js/30.d61e25a8.js"><link rel="prefetch" href="/yi-blog/assets/js/31.d007c8ac.js"><link rel="prefetch" href="/yi-blog/assets/js/32.7790f7a6.js"><link rel="prefetch" href="/yi-blog/assets/js/33.b8985263.js"><link rel="prefetch" href="/yi-blog/assets/js/34.a62ff764.js"><link rel="prefetch" href="/yi-blog/assets/js/36.f533ec24.js"><link rel="prefetch" href="/yi-blog/assets/js/37.f1433bd8.js"><link rel="prefetch" href="/yi-blog/assets/js/38.1b0b05ac.js"><link rel="prefetch" href="/yi-blog/assets/js/39.cb48d49a.js"><link rel="prefetch" href="/yi-blog/assets/js/40.5c6fd79f.js"><link rel="prefetch" href="/yi-blog/assets/js/41.ace9b6b4.js"><link rel="prefetch" href="/yi-blog/assets/js/42.f2fcffaa.js"><link rel="prefetch" href="/yi-blog/assets/js/44.1754abd8.js"><link rel="prefetch" href="/yi-blog/assets/js/45.2c4b37fa.js"><link rel="prefetch" href="/yi-blog/assets/js/46.9f54625d.js"><link rel="prefetch" href="/yi-blog/assets/js/47.1bfe7f4f.js"><link rel="prefetch" href="/yi-blog/assets/js/48.abd249aa.js"><link rel="prefetch" href="/yi-blog/assets/js/49.1561692b.js"><link rel="prefetch" href="/yi-blog/assets/js/5.4eb2369d.js"><link rel="prefetch" href="/yi-blog/assets/js/50.6b971971.js"><link rel="prefetch" href="/yi-blog/assets/js/51.851a3236.js"><link rel="prefetch" href="/yi-blog/assets/js/52.e97fa695.js"><link rel="prefetch" href="/yi-blog/assets/js/53.835d1291.js"><link rel="prefetch" href="/yi-blog/assets/js/54.b7124ada.js"><link rel="prefetch" href="/yi-blog/assets/js/55.84fd79e5.js"><link rel="prefetch" href="/yi-blog/assets/js/56.d5ac5493.js"><link rel="prefetch" href="/yi-blog/assets/js/6.c90471de.js"><link rel="prefetch" href="/yi-blog/assets/js/7.bc4fd879.js"><link rel="prefetch" href="/yi-blog/assets/js/8.ad207cb4.js"><link rel="prefetch" href="/yi-blog/assets/js/9.d807969d.js">
+    <link rel="stylesheet" href="/yi-blog/assets/css/0.styles.25f00920.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/yi-blog/" class="home-link router-link-active"><!----> <span class="site-name">梦了然然</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/yi-blog/" class="nav-link">首页</a></div><div class="nav-item"><a href="/yi-blog/blog/" class="nav-link router-link-active">博文</a></div><div class="nav-item"><a href="/yi-blog/star.html" class="nav-link">收藏</a></div><div class="nav-item"><a href="/yi-blog/timeline.html" class="nav-link">心路</a></div><div class="nav-item"><a href="https://github.com/joyran" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/yi-blog/" class="nav-link">首页</a></div><div class="nav-item"><a href="/yi-blog/blog/" class="nav-link router-link-active">博文</a></div><div class="nav-item"><a href="/yi-blog/star.html" class="nav-link">收藏</a></div><div class="nav-item"><a href="/yi-blog/timeline.html" class="nav-link">心路</a></div><div class="nav-item"><a href="https://github.com/joyran" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <!----> </aside> <!----> <main class="page" data-v-a41eed80> <section class="page-header" data-v-a41eed80><div class="page-title" data-v-a41eed80>自定义 Alert + Confirm</div></section> <div class="theme-default-content content__default" data-v-a41eed80><p>中后台开发中经常要用到告警和弹框确认功能，分别对应原生的 <code>alert</code> 和 <code>confirm</code> 方法，就是这样式不敢恭维，只能自己实现一套了。
+<button onclick="javascript:alert('操作失败!')">Alert</button> <button onclick="javascript:confirm('确认删除吗？删除后无法恢复!')">Confirm</button></p> <p>实现很简单，新建一个 <code>alert</code> 组件，然后在需要的地方 <code>import</code>, 然后设置 <code>visible = true</code> 即可，但这样太麻烦了，能不能像原生js那样直接使用 <code>alert</code> 方法呢，下面就来尝试下。</p> <p>不管通过哪种方式，alert 组件必不可少，不过和普通组件不一样，配置项不能通过 props 传递，而是要放在 data 里。</p> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token comment">&lt;!-- alert.vue --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">v-show</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>visible<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>alert<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>alert-message<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>{{ message }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>alert-button<span class="token punctuation">&quot;</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>handleClose<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>确定<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>alert-mask<span class="token punctuation">&quot;</span></span> <span class="token attr-name">@click.self</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>handleClose<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token function">data</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      visible<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      message<span class="token operator">:</span> <span class="token string">''</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function">handleClose</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>visible <span class="token operator">=</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>less<span class="token punctuation">&quot;</span></span> <span class="token attr-name">scoped</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+<span class="token selector">.alert</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 320px<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate</span><span class="token punctuation">(</span>-50%<span class="token punctuation">,</span> 0<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> 20%<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 4px<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 24px<span class="token punctuation">;</span>
+  <span class="token property">z-index</span><span class="token punctuation">:</span> 1001<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.alert-message</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 14px<span class="token punctuation">;</span>
+  <span class="token property">line-height</span><span class="token punctuation">:</span> 22px<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #333<span class="token punctuation">;</span>
+  <span class="token property">margin-bottom</span><span class="token punctuation">:</span> 32px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.alert-button</span> <span class="token punctuation">{</span>
+  <span class="token property">min-width</span><span class="token punctuation">:</span> 80px<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 8px 24px<span class="token punctuation">;</span>
+  <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #0075de<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">outline</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">float</span><span class="token punctuation">:</span> right<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 4px<span class="token punctuation">;</span>
+  <span class="token property">cursor</span><span class="token punctuation">:</span> pointer<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.alert-mask</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #000<span class="token punctuation">;</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0.5<span class="token punctuation">;</span>
+  <span class="token property">z-index</span><span class="token punctuation">:</span> 1000<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>接下来注册一个 <code>$alert</code> 方法，调用该方法时加载 alert 组件并添加到 body 上。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// alert.js</span>
+<span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token keyword">import</span> Index <span class="token keyword">from</span> <span class="token string">'./alert.vue'</span>
+<span class="token keyword">const</span> IndexConstructor <span class="token operator">=</span> Vue<span class="token punctuation">.</span><span class="token function">extend</span><span class="token punctuation">(</span>Index<span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">Alert</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">options</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  options <span class="token operator">=</span> options <span class="token operator">||</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment">// 获取参数</span>
+
+  <span class="token comment">// 基于我们写好的 alert 组件实例化一个新的 alert 实例</span>
+  <span class="token keyword">const</span> instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">IndexConstructor</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    data<span class="token operator">:</span> options <span class="token comment">// 这里解释了为什么参数不用 props 而用 data</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  instance<span class="token punctuation">.</span><span class="token function">$mount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 加载实例，不能加参数，如果加了 body 参数会把整个 body 覆盖重写</span>
+  document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>instance<span class="token punctuation">.</span>$el<span class="token punctuation">)</span> <span class="token comment">// 将上一步加载的实例添加到 body 上</span>
+  instance<span class="token punctuation">.</span>visible <span class="token operator">=</span> <span class="token boolean">true</span> <span class="token comment">// 设置 data 里的 visible 为 true 显示弹框</span>
+  <span class="token keyword">return</span> instance
+<span class="token punctuation">}</span>
+
+<span class="token class-name">Vue</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>$alert <span class="token operator">=</span> Alert <span class="token comment">// alert 绑定到 vue 上方便调用</span>
+</code></pre></div><p>此时在组件中可以愉快的调用了</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$alert</span><span class="token punctuation">(</span><span class="token punctuation">{</span> message<span class="token operator">:</span> <span class="token string">'hello world'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>接下来实现关闭功能，当点击确定按钮或者蒙版时关闭弹框，这个也简单，只需要绑定事件并设置 <code>visible = false</code> 即可，最后记得在关闭事件中销毁组件。</p> <div class="language-js extra-class"><div class="highlight-lines"><br><br><br><br><br><div class="highlighted"> </div><div class="highlighted"> </div><br><br><br></div><pre class="language-js"><code>methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token function">handleClose</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>visible <span class="token operator">=</span> <span class="token boolean">false</span>
+    <span class="token comment">// 完全销毁一个实例。清理它与其它实例的连接，解绑它的全部指令及事件监听器。</span>
+    <span class="token comment">// https://cn.vuejs.org/v2/api/#vm-destroy</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$destroy</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>$el<span class="token punctuation">.</span>parentNode<span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$el<span class="token punctuation">)</span> <span class="token comment">// 从父元素上移除当前组件 dom</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="监听关闭事件"><a href="#监听关闭事件" class="header-anchor">#</a> 监听关闭事件</h3> <p>上一步实现了关闭功能，如果用户想在调用的时候监听关闭事件，该怎么处理？先仿照其他组件写一个示例。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$alert</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  message<span class="token operator">:</span> <span class="token string">'hello world'</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">onClose</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'closed'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>onClose 也是 options 的一个字段，通过 data 传递给 alert 组件了，在 alert 组件里加一个 onClose 变量接收这个方法，然后在 handleClose 中调用 onClose 方法，此时外部传入进来的 onClose 方法就被调用了。</p> <div class="language-js extra-class"><div class="highlight-lines"><br><br><br><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br><div class="highlighted"> </div><br><br><br><br></div><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token function">data</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      visible<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      message<span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+      onClose<span class="token operator">:</span> <span class="token keyword">null</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function">handleClose</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>visible <span class="token operator">=</span> <span class="token boolean">false</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$destroy</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>$el<span class="token punctuation">.</span>parentNode<span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$el<span class="token punctuation">)</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">onClose</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="效果演示"><a href="#效果演示" class="header-anchor">#</a> 效果演示</h3> <p>目前这个组件还是很粗糙的，没有动画，配置也不够灵活，不过既然我们知道了方法，这些以后都可以慢慢加。</p> <div><button type="button" class="el-button el-button--primary"><!----><!----><span>Alert</span></button></div> <p>可能有的同学会好奇了，怎么在 vuepress 里注册 $alert 方法呢，答案是用神奇的 enhanceApp.js。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// docs\.vuepress\enhanceApp.js</span>
+<span class="token keyword">import</span> Alert <span class="token keyword">from</span> <span class="token string">'./alert.js'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> Vue<span class="token punctuation">,</span> options<span class="token punctuation">,</span> router<span class="token punctuation">,</span> siteData <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token class-name">Vue</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>$alert <span class="token operator">=</span> Alert
+<span class="token punctuation">}</span>
+</code></pre></div><p>上面代码演示按钮用到了 ElementUI，在 vuepress 中引入 ElementUI 也是通过 enhanceApp.js。</p> <div class="language-js extra-class"><div class="highlight-lines"><br><div class="highlighted"> </div><div class="highlighted"> </div><br><br><div class="highlighted"> </div><br><br><br></div><pre class="language-js"><code><span class="token keyword">import</span> Alert <span class="token keyword">from</span> <span class="token string">'./alert'</span>
+<span class="token keyword">import</span> ElementUI <span class="token keyword">from</span> <span class="token string">'element-ui'</span>
+<span class="token keyword">import</span> <span class="token string">'element-ui/lib/theme-chalk/index.css'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> Vue<span class="token punctuation">,</span> options<span class="token punctuation">,</span> router<span class="token punctuation">,</span> siteData <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>ElementUI<span class="token punctuation">)</span>
+  <span class="token class-name">Vue</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>$alert <span class="token operator">=</span> Alert
+<span class="token punctuation">}</span>
+</code></pre></div><p>本以为可以开心的用 element ui 了，结果控制台报错 <code>Cannot find module 'core-js/library/xxx'</code>，这是因为 vuepress 和 element ui 依赖的 core-js 版本不一致导致的，用这条命令可以解决该问题 <code>yarn add async-validator@1.11.5</code>, <a href="https://github.com/vuejs/vuepress/issues/2275#issuecomment-693347859" target="_blank" rel="noopener noreferrer">issue<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h3 id="封装成独立组件"><a href="#封装成独立组件" class="header-anchor">#</a> 封装成独立组件</h3> <p>目前这个 <code>alert</code> 组件还只能在当前项目中使用，接下来稍微封装下发布到 npm 仓库供所有人使用，把 alert.js 最后一行 <code>Vue.prototype.$alert = Alert</code> 替换为 <code>export default Alert</code>，改由外部注册</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// index.js</span>
+<span class="token keyword">import</span> Alert <span class="token keyword">from</span> <span class="token string">'./alert.js'</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">install</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">Vue<span class="token punctuation">,</span> opts <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token class-name">Vue</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>$alert <span class="token operator">=</span> Alert
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span> install <span class="token punctuation">}</span>
+</code></pre></div><p>在 package.json scripts 添加一条命令，</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token string">&quot;build&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;vue-cli-service build --target lib --name alert ./index.js&quot;</span>,
+</code></pre></div><p><code>npm run build</code> 后执行 <code>npm publish</code> 上传到 npm 仓库，此时别人下载下来后就可以愉快的使用了。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token keyword">import</span> alert <span class="token keyword">from</span> <span class="token string">'alert'</span>
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>alert<span class="token punctuation">)</span>
+
+<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$alert</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  message<span class="token operator">:</span> <span class="token string">'hello world'</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">onClose</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'closed'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div></div> <footer class="page-edit" data-v-a41eed80><!----> <!----></footer> <!---->  <div class="theme-change" data-v-66feac70 data-v-a41eed80><img src="https://img-cdn.wezhuiyi.com/yi-blog/light-mode.svg" alt data-v-66feac70></div></main></div><div class="global-ui"></div></div>
+    <script src="/yi-blog/assets/js/app.6f6874a9.js" defer></script><script src="/yi-blog/assets/js/4.717f7ba6.js" defer></script><script src="/yi-blog/assets/js/2.6b638d4f.js" defer></script><script src="/yi-blog/assets/js/43.b92a27c6.js" defer></script><script src="/yi-blog/assets/js/35.ed2f2d72.js" defer></script>
+  </body>
+</html>

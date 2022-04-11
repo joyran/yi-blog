@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>一个超简单的 vue-markdown-loader | 梦了然然</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <link rel="/shortcut icon" href="/yi-blog/favicon.png">
+    <meta name="description" content="梦了然然">
+    
+    <link rel="preload" href="/yi-blog/assets/css/0.styles.25f00920.css" as="style"><link rel="preload" href="/yi-blog/assets/js/app.6f6874a9.js" as="script"><link rel="preload" href="/yi-blog/assets/js/4.717f7ba6.js" as="script"><link rel="preload" href="/yi-blog/assets/js/2.6b638d4f.js" as="script"><link rel="preload" href="/yi-blog/assets/js/55.84fd79e5.js" as="script"><link rel="prefetch" href="/yi-blog/assets/js/10.e0ccc183.js"><link rel="prefetch" href="/yi-blog/assets/js/11.436d186b.js"><link rel="prefetch" href="/yi-blog/assets/js/12.79a81333.js"><link rel="prefetch" href="/yi-blog/assets/js/13.c7cfd8f8.js"><link rel="prefetch" href="/yi-blog/assets/js/14.5b360613.js"><link rel="prefetch" href="/yi-blog/assets/js/15.d53edd17.js"><link rel="prefetch" href="/yi-blog/assets/js/16.5af8f676.js"><link rel="prefetch" href="/yi-blog/assets/js/17.afa5609b.js"><link rel="prefetch" href="/yi-blog/assets/js/18.12fc860a.js"><link rel="prefetch" href="/yi-blog/assets/js/19.9ef67c78.js"><link rel="prefetch" href="/yi-blog/assets/js/20.54560291.js"><link rel="prefetch" href="/yi-blog/assets/js/21.436aba33.js"><link rel="prefetch" href="/yi-blog/assets/js/22.61a8d35d.js"><link rel="prefetch" href="/yi-blog/assets/js/23.674e979e.js"><link rel="prefetch" href="/yi-blog/assets/js/24.1803b8aa.js"><link rel="prefetch" href="/yi-blog/assets/js/25.38ae7861.js"><link rel="prefetch" href="/yi-blog/assets/js/26.499c2604.js"><link rel="prefetch" href="/yi-blog/assets/js/27.467810ae.js"><link rel="prefetch" href="/yi-blog/assets/js/28.f0843f77.js"><link rel="prefetch" href="/yi-blog/assets/js/29.0a19bbce.js"><link rel="prefetch" href="/yi-blog/assets/js/3.ea3df8b1.js"><link rel="prefetch" href="/yi-blog/assets/js/30.d61e25a8.js"><link rel="prefetch" href="/yi-blog/assets/js/31.d007c8ac.js"><link rel="prefetch" href="/yi-blog/assets/js/32.7790f7a6.js"><link rel="prefetch" href="/yi-blog/assets/js/33.b8985263.js"><link rel="prefetch" href="/yi-blog/assets/js/34.a62ff764.js"><link rel="prefetch" href="/yi-blog/assets/js/35.ed2f2d72.js"><link rel="prefetch" href="/yi-blog/assets/js/36.f533ec24.js"><link rel="prefetch" href="/yi-blog/assets/js/37.f1433bd8.js"><link rel="prefetch" href="/yi-blog/assets/js/38.1b0b05ac.js"><link rel="prefetch" href="/yi-blog/assets/js/39.cb48d49a.js"><link rel="prefetch" href="/yi-blog/assets/js/40.5c6fd79f.js"><link rel="prefetch" href="/yi-blog/assets/js/41.ace9b6b4.js"><link rel="prefetch" href="/yi-blog/assets/js/42.f2fcffaa.js"><link rel="prefetch" href="/yi-blog/assets/js/43.b92a27c6.js"><link rel="prefetch" href="/yi-blog/assets/js/44.1754abd8.js"><link rel="prefetch" href="/yi-blog/assets/js/45.2c4b37fa.js"><link rel="prefetch" href="/yi-blog/assets/js/46.9f54625d.js"><link rel="prefetch" href="/yi-blog/assets/js/47.1bfe7f4f.js"><link rel="prefetch" href="/yi-blog/assets/js/48.abd249aa.js"><link rel="prefetch" href="/yi-blog/assets/js/49.1561692b.js"><link rel="prefetch" href="/yi-blog/assets/js/5.4eb2369d.js"><link rel="prefetch" href="/yi-blog/assets/js/50.6b971971.js"><link rel="prefetch" href="/yi-blog/assets/js/51.851a3236.js"><link rel="prefetch" href="/yi-blog/assets/js/52.e97fa695.js"><link rel="prefetch" href="/yi-blog/assets/js/53.835d1291.js"><link rel="prefetch" href="/yi-blog/assets/js/54.b7124ada.js"><link rel="prefetch" href="/yi-blog/assets/js/56.d5ac5493.js"><link rel="prefetch" href="/yi-blog/assets/js/6.c90471de.js"><link rel="prefetch" href="/yi-blog/assets/js/7.bc4fd879.js"><link rel="prefetch" href="/yi-blog/assets/js/8.ad207cb4.js"><link rel="prefetch" href="/yi-blog/assets/js/9.d807969d.js">
+    <link rel="stylesheet" href="/yi-blog/assets/css/0.styles.25f00920.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/yi-blog/" class="home-link router-link-active"><!----> <span class="site-name">梦了然然</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/yi-blog/" class="nav-link">首页</a></div><div class="nav-item"><a href="/yi-blog/blog/" class="nav-link router-link-active">博文</a></div><div class="nav-item"><a href="/yi-blog/star.html" class="nav-link">收藏</a></div><div class="nav-item"><a href="/yi-blog/timeline.html" class="nav-link">心路</a></div><div class="nav-item"><a href="https://github.com/joyran" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/yi-blog/" class="nav-link">首页</a></div><div class="nav-item"><a href="/yi-blog/blog/" class="nav-link router-link-active">博文</a></div><div class="nav-item"><a href="/yi-blog/star.html" class="nav-link">收藏</a></div><div class="nav-item"><a href="/yi-blog/timeline.html" class="nav-link">心路</a></div><div class="nav-item"><a href="https://github.com/joyran" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <!----> </aside> <!----> <main class="page" data-v-a41eed80> <section class="page-header" data-v-a41eed80><div class="page-title" data-v-a41eed80>一个超简单的 vue-markdown-loader</div></section> <div class="theme-default-content content__default" data-v-a41eed80><p>得益于 <code>vuepress</code> 的强大功能，我们可以直接在 markdown 中写文章，然后自动渲染为文章内容。接下来实现一个简单的 <code>vue-markdown-loader</code>，将 .md 文件转换为文章内容。</p> <p>webpack 是无法直接处理 .md 格式文件的，直接 <code>import</code> 会报错，此时需要一个 <code>loader</code> 来处理，这个 <code>loader</code> 的作用就是把 .md 文件转换为 html 格式，然后加上 <code>&lt;template&gt;&lt;/template&gt;</code> 标签丢给 <code>vue-loader</code> 处理。其实我们平常写的单文件组件 <code>.vue</code> 也是由 <code>vue-loader</code> 处理的。</p> <p>新建一个 <code>md-loader.js</code> 文件，复制下面代码，一个最简单的 <code>vue-markdown-loader</code> 就完成了。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> md <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'markdown-it'</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">source</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">cacheable</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+  <span class="token comment">// source 是原始文件内容，html 是用 markdown-it 编译后的 html 内容</span>
+  <span class="token keyword">const</span> html <span class="token operator">=</span> md<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span>source<span class="token punctuation">)</span>
+
+  <span class="token keyword">const</span> template <span class="token operator">=</span> <span class="token punctuation">(</span>
+    <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;template&gt;
+      &lt;div class=&quot;markdown-body&quot;&gt;
+        </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>html<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
+      &lt;/div&gt;
+    &lt;/template&gt;</span><span class="token template-punctuation string">`</span></span>
+  <span class="token punctuation">)</span>
+
+  <span class="token keyword">return</span> template
+<span class="token punctuation">}</span>
+</code></pre></div> <h3 id="loader-配置"><a href="#loader-配置" class="header-anchor">#</a> Loader 配置</h3> <p>loader 写好后还要在 webpack 配置文件中配置，下面例子是 <code>vue.config.js</code> 的配置。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">chainWebpack</span><span class="token operator">:</span> <span class="token parameter">config</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    config<span class="token punctuation">.</span>module
+      <span class="token punctuation">.</span><span class="token function">rule</span><span class="token punctuation">(</span><span class="token string">'markdown'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.md$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token string">'vue-loader'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">loader</span><span class="token punctuation">(</span><span class="token string">'vue-loader'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token string">'md-loader'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">loader</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'src/loaders/md-loader.js'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>配置好了在组件中引用，这里假设 <code>test.md</code> 是一篇 md 文章。</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Test</span> <span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">import</span> Test <span class="token keyword">from</span> <span class="token string">'./test.md'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  components<span class="token operator">:</span> <span class="token punctuation">{</span>
+    Test
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="代码高亮、自定义容器"><a href="#代码高亮、自定义容器" class="header-anchor">#</a> 代码高亮、自定义容器</h3> <p>接下来加上代码高亮、样式处理以及自定义容器。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> hljs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'highlight.js'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> cheerio <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'cheerio'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> md <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'markdown-it'</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> mdContainer <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'markdown-it-container'</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">source</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">cacheable</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+  md<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    linkify<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 将类似 URL 的文本自动转换为链接。</span>
+    html<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// Enable HTML tags in source</span>
+    <span class="token comment">// 代码高亮</span>
+    <span class="token function-variable function">highlight</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">str<span class="token punctuation">,</span> lang</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>lang <span class="token operator">&amp;&amp;</span> hljs<span class="token punctuation">.</span><span class="token function">getLanguage</span><span class="token punctuation">(</span>lang<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> <span class="token punctuation">(</span>
+            <span class="token string">'&lt;pre class=&quot;hljs&quot;&gt;&lt;code&gt;'</span> <span class="token operator">+</span>
+            hljs<span class="token punctuation">.</span><span class="token function">highlight</span><span class="token punctuation">(</span>lang<span class="token punctuation">,</span> str<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">.</span>value <span class="token operator">+</span>
+            <span class="token string">'&lt;/code&gt;&lt;/pre&gt;'</span>
+          <span class="token punctuation">)</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>__<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token keyword">return</span> <span class="token punctuation">(</span>
+        <span class="token string">'&lt;pre class=&quot;hljs&quot;&gt;&lt;code&gt;'</span> <span class="token operator">+</span> md<span class="token punctuation">.</span>utils<span class="token punctuation">.</span><span class="token function">escapeHtml</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'&lt;/code&gt;&lt;/pre&gt;'</span>
+      <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token comment">// 自定义容器，:::tip 会转换为 &lt;div class=&quot;tip&quot;&gt;</span>
+  md<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>mdContainer<span class="token punctuation">,</span> <span class="token string">'tip'</span><span class="token punctuation">)</span>
+  md<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>mdContainer<span class="token punctuation">,</span> <span class="token string">'warning'</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">const</span> html <span class="token operator">=</span> md<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span>source<span class="token punctuation">)</span>
+
+  <span class="token keyword">const</span> $ <span class="token operator">=</span> cheerio<span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span>html<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    decodeEntities<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    lowerCaseAttributeNames<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    lowerCaseTags<span class="token operator">:</span> <span class="token boolean">false</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">const</span> style <span class="token operator">=</span> $<span class="token punctuation">.</span><span class="token function">html</span><span class="token punctuation">(</span><span class="token string">'style'</span><span class="token punctuation">)</span>
+
+  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'style'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">const</span> temp <span class="token operator">=</span> $<span class="token punctuation">.</span><span class="token function">html</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">const</span> template <span class="token operator">=</span> <span class="token punctuation">(</span>
+    <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;template&gt;
+      &lt;div class=&quot;markdown-body&quot;&gt;
+        </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>temp<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
+      &lt;/div&gt;
+    &lt;/template&gt;
+    </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>style<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
+  <span class="token punctuation">)</span>
+
+  <span class="token keyword">return</span> template
+<span class="token punctuation">}</span>
+</code></pre></div><p>虽然 .md 文件已经能被正常解析了，但还是没有任何样式，需要导入两个样式文件。</p> <ul><li><a href="https://github.com/joyran/yi-blog/blob/master/docs/.vuepress/github-markdown.css" target="_blank" rel="noopener noreferrer">github-markdown.css<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/joyran/yi-blog/blob/master/docs/.vuepress/highlight-atom-one-light.css" target="_blank" rel="noopener noreferrer">highlight-atom-one-light.css<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 代码高亮样式</li></ul> <h3 id="自动注册路由"><a href="#自动注册路由" class="header-anchor">#</a> 自动注册路由</h3> <p>目前这种方式还需要手动引入 md 文件，然后注册组件并使用，还是有点麻烦，可以把一篇 md 文件自动注册为一个对应的组件，然后注册到路由中。</p> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token comment">&lt;!-- blog.vue --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>html<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>router-view</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>router-view</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// router.js</span>
+<span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token keyword">import</span> VueRouter <span class="token keyword">from</span> <span class="token string">'vue-router'</span>
+
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>VueRouter<span class="token punctuation">)</span>
+
+<span class="token comment">// 遍历 blog 目录下所有 md 文件, 并生成路由</span>
+<span class="token keyword">const</span> blogRoutes <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">const</span> blogs <span class="token operator">=</span> require<span class="token punctuation">.</span><span class="token function">context</span><span class="token punctuation">(</span><span class="token string">'@/blog'</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\w+\.(md)$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">)</span>
+blogs<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">fileName</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> reg <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.\/(.+).md</span><span class="token regex-delimiter">/</span></span>
+  <span class="token keyword">const</span> name <span class="token operator">=</span> fileName<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span>reg<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+  blogRoutes<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    path<span class="token operator">:</span> name<span class="token punctuation">,</span>
+    name<span class="token operator">:</span> name<span class="token punctuation">,</span>
+    <span class="token function-variable function">component</span><span class="token operator">:</span> <span class="token parameter">resolve</span> <span class="token operator">=&gt;</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">@/blog/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">.md</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">]</span><span class="token punctuation">,</span> resolve<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> routes <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    path<span class="token operator">:</span> <span class="token string">'/blog'</span><span class="token punctuation">,</span>
+    name<span class="token operator">:</span> <span class="token string">'blog'</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">component</span><span class="token operator">:</span> <span class="token parameter">resolve</span> <span class="token operator">=&gt;</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'@/views/blog'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> resolve<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    children<span class="token operator">:</span> blogRoutes
+  <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+
+<span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueRouter</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  mode<span class="token operator">:</span> <span class="token string">'history'</span><span class="token punctuation">,</span>
+  base<span class="token operator">:</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">BASE_URL</span><span class="token punctuation">,</span>
+  routes
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> router
+</code></pre></div><p>此时在 blog 文件夹下面新建一个 test.md 文件，则自动生成一个 <code>/blog/test</code> 路由，直接访问即可。</p> <h3 id="批量注册全局组件"><a href="#批量注册全局组件" class="header-anchor">#</a> 批量注册全局组件</h3> <p>在 <code>vuepress</code> 中可以直接引用 <code>.vuepress/components</code> 中的组件，这得益于批量注册全局组件的能力。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// auto-register.js</span>
+<span class="token comment">// 自动注册全局组件</span>
+<span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token keyword">import</span> upperFirst <span class="token keyword">from</span> <span class="token string">'lodash/upperFirst'</span>
+<span class="token keyword">import</span> camelCase <span class="token keyword">from</span> <span class="token string">'lodash/camelCase'</span>
+
+<span class="token comment">// 将components目录下所有子组件注册为全局组件</span>
+<span class="token keyword">const</span> requireComponent <span class="token operator">=</span> require<span class="token punctuation">.</span><span class="token function">context</span><span class="token punctuation">(</span><span class="token string">'@/components'</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\w+\.(vue)$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">)</span>
+
+requireComponent<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">fileName</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 获取组件配置</span>
+  <span class="token keyword">const</span> componentConfig <span class="token operator">=</span> <span class="token function">requireComponent</span><span class="token punctuation">(</span>fileName<span class="token punctuation">)</span>
+
+  <span class="token comment">// 获取组件的 PascalCase 命名</span>
+  <span class="token keyword">const</span> componentName <span class="token operator">=</span>
+    <span class="token function">upperFirst</span><span class="token punctuation">(</span>
+      <span class="token function">camelCase</span><span class="token punctuation">(</span>
+        <span class="token comment">// 获取和目录深度无关的文件名</span>
+        fileName
+          <span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span>
+          <span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+          <span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.\w+$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
+      <span class="token punctuation">)</span>
+    <span class="token punctuation">)</span>
+
+  <span class="token comment">// 全局注册组件</span>
+  Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span>
+    componentName<span class="token punctuation">,</span>
+    <span class="token comment">// 如果这个组件选项是通过 `export default` 导出的，</span>
+    <span class="token comment">// 那么就会优先使用 `.default`，</span>
+    <span class="token comment">// 否则回退到使用模块的根。</span>
+    componentConfig<span class="token punctuation">.</span>default <span class="token operator">||</span> componentConfig
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// main.js</span>
+<span class="token keyword">import</span> <span class="token string">'./auto-register'</span>
+</code></pre></div></div> <footer class="page-edit" data-v-a41eed80><!----> <!----></footer> <!---->  <div class="theme-change" data-v-66feac70 data-v-a41eed80><img src="https://img-cdn.wezhuiyi.com/yi-blog/light-mode.svg" alt data-v-66feac70></div></main></div><div class="global-ui"></div></div>
+    <script src="/yi-blog/assets/js/app.6f6874a9.js" defer></script><script src="/yi-blog/assets/js/4.717f7ba6.js" defer></script><script src="/yi-blog/assets/js/2.6b638d4f.js" defer></script><script src="/yi-blog/assets/js/55.84fd79e5.js" defer></script>
+  </body>
+</html>

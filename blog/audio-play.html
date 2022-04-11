@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>自定义音频播放组件 AudioPlay | 梦了然然</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <link rel="/shortcut icon" href="/yi-blog/favicon.png">
+    <meta name="description" content="梦了然然">
+    
+    <link rel="preload" href="/yi-blog/assets/css/0.styles.25f00920.css" as="style"><link rel="preload" href="/yi-blog/assets/js/app.6f6874a9.js" as="script"><link rel="preload" href="/yi-blog/assets/js/4.717f7ba6.js" as="script"><link rel="preload" href="/yi-blog/assets/js/2.6b638d4f.js" as="script"><link rel="preload" href="/yi-blog/assets/js/44.1754abd8.js" as="script"><link rel="preload" href="/yi-blog/assets/js/14.5b360613.js" as="script"><link rel="prefetch" href="/yi-blog/assets/js/10.e0ccc183.js"><link rel="prefetch" href="/yi-blog/assets/js/11.436d186b.js"><link rel="prefetch" href="/yi-blog/assets/js/12.79a81333.js"><link rel="prefetch" href="/yi-blog/assets/js/13.c7cfd8f8.js"><link rel="prefetch" href="/yi-blog/assets/js/15.d53edd17.js"><link rel="prefetch" href="/yi-blog/assets/js/16.5af8f676.js"><link rel="prefetch" href="/yi-blog/assets/js/17.afa5609b.js"><link rel="prefetch" href="/yi-blog/assets/js/18.12fc860a.js"><link rel="prefetch" href="/yi-blog/assets/js/19.9ef67c78.js"><link rel="prefetch" href="/yi-blog/assets/js/20.54560291.js"><link rel="prefetch" href="/yi-blog/assets/js/21.436aba33.js"><link rel="prefetch" href="/yi-blog/assets/js/22.61a8d35d.js"><link rel="prefetch" href="/yi-blog/assets/js/23.674e979e.js"><link rel="prefetch" href="/yi-blog/assets/js/24.1803b8aa.js"><link rel="prefetch" href="/yi-blog/assets/js/25.38ae7861.js"><link rel="prefetch" href="/yi-blog/assets/js/26.499c2604.js"><link rel="prefetch" href="/yi-blog/assets/js/27.467810ae.js"><link rel="prefetch" href="/yi-blog/assets/js/28.f0843f77.js"><link rel="prefetch" href="/yi-blog/assets/js/29.0a19bbce.js"><link rel="prefetch" href="/yi-blog/assets/js/3.ea3df8b1.js"><link rel="prefetch" href="/yi-blog/assets/js/30.d61e25a8.js"><link rel="prefetch" href="/yi-blog/assets/js/31.d007c8ac.js"><link rel="prefetch" href="/yi-blog/assets/js/32.7790f7a6.js"><link rel="prefetch" href="/yi-blog/assets/js/33.b8985263.js"><link rel="prefetch" href="/yi-blog/assets/js/34.a62ff764.js"><link rel="prefetch" href="/yi-blog/assets/js/35.ed2f2d72.js"><link rel="prefetch" href="/yi-blog/assets/js/36.f533ec24.js"><link rel="prefetch" href="/yi-blog/assets/js/37.f1433bd8.js"><link rel="prefetch" href="/yi-blog/assets/js/38.1b0b05ac.js"><link rel="prefetch" href="/yi-blog/assets/js/39.cb48d49a.js"><link rel="prefetch" href="/yi-blog/assets/js/40.5c6fd79f.js"><link rel="prefetch" href="/yi-blog/assets/js/41.ace9b6b4.js"><link rel="prefetch" href="/yi-blog/assets/js/42.f2fcffaa.js"><link rel="prefetch" href="/yi-blog/assets/js/43.b92a27c6.js"><link rel="prefetch" href="/yi-blog/assets/js/45.2c4b37fa.js"><link rel="prefetch" href="/yi-blog/assets/js/46.9f54625d.js"><link rel="prefetch" href="/yi-blog/assets/js/47.1bfe7f4f.js"><link rel="prefetch" href="/yi-blog/assets/js/48.abd249aa.js"><link rel="prefetch" href="/yi-blog/assets/js/49.1561692b.js"><link rel="prefetch" href="/yi-blog/assets/js/5.4eb2369d.js"><link rel="prefetch" href="/yi-blog/assets/js/50.6b971971.js"><link rel="prefetch" href="/yi-blog/assets/js/51.851a3236.js"><link rel="prefetch" href="/yi-blog/assets/js/52.e97fa695.js"><link rel="prefetch" href="/yi-blog/assets/js/53.835d1291.js"><link rel="prefetch" href="/yi-blog/assets/js/54.b7124ada.js"><link rel="prefetch" href="/yi-blog/assets/js/55.84fd79e5.js"><link rel="prefetch" href="/yi-blog/assets/js/56.d5ac5493.js"><link rel="prefetch" href="/yi-blog/assets/js/6.c90471de.js"><link rel="prefetch" href="/yi-blog/assets/js/7.bc4fd879.js"><link rel="prefetch" href="/yi-blog/assets/js/8.ad207cb4.js"><link rel="prefetch" href="/yi-blog/assets/js/9.d807969d.js">
+    <link rel="stylesheet" href="/yi-blog/assets/css/0.styles.25f00920.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/yi-blog/" class="home-link router-link-active"><!----> <span class="site-name">梦了然然</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/yi-blog/" class="nav-link">首页</a></div><div class="nav-item"><a href="/yi-blog/blog/" class="nav-link router-link-active">博文</a></div><div class="nav-item"><a href="/yi-blog/star.html" class="nav-link">收藏</a></div><div class="nav-item"><a href="/yi-blog/timeline.html" class="nav-link">心路</a></div><div class="nav-item"><a href="https://github.com/joyran" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/yi-blog/" class="nav-link">首页</a></div><div class="nav-item"><a href="/yi-blog/blog/" class="nav-link router-link-active">博文</a></div><div class="nav-item"><a href="/yi-blog/star.html" class="nav-link">收藏</a></div><div class="nav-item"><a href="/yi-blog/timeline.html" class="nav-link">心路</a></div><div class="nav-item"><a href="https://github.com/joyran" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <!----> </aside> <!----> <main class="page" data-v-a41eed80> <section class="page-header" data-v-a41eed80><div class="page-title" data-v-a41eed80>自定义音频播放组件 AudioPlay</div></section> <div class="theme-default-content content__default" data-v-a41eed80><p>项目中音频播放用原生组件 <code>audio</code> 就可以了，界面也挺美观，功能也很齐全，但是界面样式每个浏览器不一样，所以设计师都会设计一套独立的音频播放组件。</p> <p>先来看看浏览器原生 <code>audio</code> 组件长什么样，一定要加 <code>controls</code>，显示原生控制按钮。</p> <div styles="margin-top: 16px;"><audio src="https://apply-public-cdn.wezhuiyi.com/43811bd2-e03a-1630316869303.mp3" preload="" controls="controls"></audio></div> <p>再来看看自定义音频组件长什么样，是可以正常播放的。</p> <div class="audio-play" data-v-56b470fd><audio preload src="https://apply-public-cdn.wezhuiyi.com/43811bd2-e03a-1630316869303.mp3" data-v-56b470fd>
+    您的浏览器不支持音频
+  </audio> <div class="audio-controls" data-v-56b470fd><div class="audio-play-icons" data-v-56b470fd><i class="iconfont iconbofang1 is-disabled" data-v-56b470fd></i></div> <div class="audio-progress" data-v-56b470fd><div class="audio-progress__background" data-v-56b470fd></div> <div class="audio-progress__track" style="width:0%;" data-v-56b470fd></div> <div class="audio-progress__thumb is-disabled" style="left:0%;" data-v-56b470fd></div></div> <div class="flex-center" data-v-56b470fd><p class="font-small color-text-3" data-v-56b470fd>00:00/</p> <p class="font-small color-text-3" data-v-56b470fd>00:00</p></div></div></div> <h3 id="实现思路"><a href="#实现思路" class="header-anchor">#</a> 实现思路</h3> <p>想要实现一个自定义音频播放组件，还得使用原生 <code>audio</code> 组件，只不过不加 <code>controls</code> 属性，播放控制按钮以及进度条手动实现，UI实现起来比较简单，难点也只有进度条的拖动，要用到三个鼠标事件，在控制进度的小圆点上监听 <code>mousedown</code> 事件，<code>mousemove</code> 事件监听鼠标移动，实时计算鼠标偏移量并设置小圆点的 <code>left</code> 属性，设置播放进度条的 <code>width</code> 属性，达到进度条跟随鼠标移动的效果，<code>mouseup</code> 监听鼠标松开事件，更新音频播放进度。</p> <p>要特别注意的是 <code>mousedown</code> 事件可以绑定在小圆点上，<code>mousemove</code> 不能绑定在小圆点上，必须绑定在 <code>document</code> 上，如果绑定在小圆点上会出现鼠标拖动太快，小圆点位置没有及时更新，下次 <code>mousemove</code> 就监听不到了，所以需要在 <code>mousedown</code> 时绑定 <code>mousemove</code> 和 <code>mouseup</code> 事件到 <code>document</code> 上，然后在 <code>mouseup</code> 的时候解绑。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">thumbMouseDown</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  e<span class="token punctuation">.</span><span class="token function">stopImmediatePropagation</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  document<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'mousemove'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>thumbMouseMove<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+  document<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'mouseup'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>thumbMouseUp<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+<span class="token function">thumbMouseMove</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">thumbMouseUp</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  document<span class="token punctuation">.</span><span class="token function">removeEventListener</span><span class="token punctuation">(</span><span class="token string">'mousemove'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>thumbMouseMove<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+  document<span class="token punctuation">.</span><span class="token function">removeEventListener</span><span class="token punctuation">(</span><span class="token string">'mouseup'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>thumbMouseUp<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><p>音频文件下载一般都需要个过程，如果还没准备好是不能播放的，canplay 事件在音频可以开始播放时触发。完整的事件<a href="https://www.runoob.com/tags/ref-av-dom.html" target="_blank" rel="noopener noreferrer">参考手册<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h3 id="音频流"><a href="#音频流" class="header-anchor">#</a> 音频流</h3> <p>如果后端返回的不是一个可以播放的 url，而是通过流推送过来，则需要特殊处理下，需要用到 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/URL/createObjectURL" target="_blank" rel="noopener noreferrer">createObjectURL<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 创建一个 url。<strong>后端返回的 content-type 要设置为 <code>audio/wav</code></strong></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'/url'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> res<span class="token punctuation">.</span><span class="token function">blob</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> blob <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Blob</span><span class="token punctuation">(</span><span class="token punctuation">[</span>res<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> url <span class="token operator">=</span> <span class="token constant">URL</span><span class="token punctuation">.</span><span class="token function">createObjectURL</span><span class="token punctuation">(</span>blob<span class="token punctuation">)</span>
+    
+    <span class="token comment">// 这里的 url 可以直接赋值给 audio src 播放</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>完整代码</p> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>audio-play<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>audio</span>
+      <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>audio<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">preload</span>
+      <span class="token attr-name">:src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>src<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">@canplay</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>canplay<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">@pause</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>pause<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">@timeupdate</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>timeupdate<span class="token punctuation">&quot;</span></span>
+    <span class="token punctuation">&gt;</span></span>
+      您的浏览器不支持音频
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>audio</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>audio-controls<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>audio-play-icons<span class="token punctuation">&quot;</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>play<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">v-if</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>playing<span class="token punctuation">&quot;</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>iconfont iconzanting1 color-primary<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span>
+          <span class="token attr-name">v-else</span>
+          <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>iconfont iconbofang1<span class="token punctuation">&quot;</span></span>
+          <span class="token attr-name">:class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>[audio ? <span class="token punctuation">'</span>color-primary<span class="token punctuation">'</span> : <span class="token punctuation">'</span>is-disabled<span class="token punctuation">'</span>]<span class="token punctuation">&quot;</span></span>
+        <span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>progress<span class="token punctuation">&quot;</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>audio-progress<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>audio-progress__background<span class="token punctuation">&quot;</span></span> <span class="token attr-name">@click.self</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>clickProgress<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>audio-progress__track<span class="token punctuation">&quot;</span></span> <span class="token attr-name">:</span><span class="token style-attr language-css"><span class="token attr-name"><span class="token attr-name">style</span></span><span class="token punctuation">=&quot;</span><span class="token attr-value">trackStyle</span><span class="token punctuation">&quot;</span></span> <span class="token attr-name">@click.self</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>clickProgress<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span>
+          <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>audio-progress__thumb<span class="token punctuation">&quot;</span></span>
+          <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>thumb<span class="token punctuation">&quot;</span></span>
+          <span class="token attr-name">:</span><span class="token style-attr language-css"><span class="token attr-name"><span class="token attr-name">style</span></span><span class="token punctuation">=&quot;</span><span class="token attr-value">thumbStyle</span><span class="token punctuation">&quot;</span></span>
+          <span class="token attr-name">:class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>{ <span class="token punctuation">'</span>is-disabled<span class="token punctuation">'</span>: !audio }<span class="token punctuation">&quot;</span></span>
+          <span class="token attr-name">@mousedown</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>thumbMouseDown<span class="token punctuation">&quot;</span></span>
+        <span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>flex-center<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>font-small color-text-3<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>{{ currentTime }}/<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>font-small color-text-3<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>{{ totalTime }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  props<span class="token operator">:</span> <span class="token punctuation">{</span>
+    src<span class="token operator">:</span> String
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      duration<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">// 总时长</span>
+      currentTime<span class="token operator">:</span> <span class="token string">'00:00'</span><span class="token punctuation">,</span>
+      totalTime<span class="token operator">:</span> <span class="token string">'00:00'</span><span class="token punctuation">,</span>
+      playing<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      audio<span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+      progress<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      initClientX<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      initOffsetX<span class="token operator">:</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  computed<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function">trackStyle</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        width<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>progress<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">%</span><span class="token template-punctuation string">`</span></span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+    <span class="token function">thumbStyle</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        left<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>progress<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">%</span><span class="token template-punctuation string">`</span></span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 播放</span>
+    <span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>audio<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 播放当前录音前先停止当前页面所有 audio 播放</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span>playing<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">const</span> audios <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'audio'</span><span class="token punctuation">)</span>
+          audios<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">audio</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            audio<span class="token punctuation">.</span><span class="token function">pause</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+          <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">this</span><span class="token punctuation">.</span>playing <span class="token operator">?</span> <span class="token keyword">this</span><span class="token punctuation">.</span>audio<span class="token punctuation">.</span><span class="token function">pause</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>audio<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>playing <span class="token operator">=</span> <span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span>playing
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+    <span class="token function">pause</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>playing <span class="token operator">=</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+    <span class="token comment">// 切换进度</span>
+    <span class="token function">clickProgress</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> progress <span class="token operator">=</span> e<span class="token punctuation">.</span>offsetX <span class="token operator">/</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>progress<span class="token punctuation">.</span>clientWidth
+      <span class="token keyword">this</span><span class="token punctuation">.</span>audio<span class="token punctuation">.</span>currentTime <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>duration <span class="token operator">*</span> progress
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+    <span class="token function">canplay</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>audio <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>audio
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>audio<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>duration <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>audio<span class="token punctuation">.</span>duration
+        <span class="token keyword">this</span><span class="token punctuation">.</span>totalTime <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">formatDuration</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">ceil</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>duration<span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+    <span class="token comment">// 进度条更新</span>
+    <span class="token function">timeupdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>audio<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>currentTime <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">formatDuration</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">ceil</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>audio<span class="token punctuation">.</span>currentTime<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>progress <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>audio<span class="token punctuation">.</span>currentTime <span class="token operator">/</span> <span class="token keyword">this</span><span class="token punctuation">.</span>duration<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">100</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>audio<span class="token punctuation">.</span>currentTime <span class="token operator">===</span> <span class="token keyword">this</span><span class="token punctuation">.</span>audio<span class="token punctuation">.</span>duration<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>audio<span class="token punctuation">.</span><span class="token function">pause</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>playing <span class="token operator">=</span> <span class="token boolean">false</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+    <span class="token comment">// 小圆点鼠标按下事件</span>
+    <span class="token function">thumbMouseDown</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span>audio<span class="token punctuation">)</span> <span class="token keyword">return</span>
+
+      <span class="token keyword">this</span><span class="token punctuation">.</span>audio<span class="token punctuation">.</span><span class="token function">pause</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>playing <span class="token operator">=</span> <span class="token boolean">false</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>initClientX <span class="token operator">=</span> e<span class="token punctuation">.</span>clientX
+      <span class="token keyword">this</span><span class="token punctuation">.</span>initOffsetX <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>progress<span class="token punctuation">.</span>clientWidth <span class="token operator">*</span> <span class="token keyword">this</span><span class="token punctuation">.</span>progress<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">100</span>
+
+      e<span class="token punctuation">.</span><span class="token function">stopImmediatePropagation</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      document<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'mousemove'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>thumbMouseMove<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+      document<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'mouseup'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>thumbMouseUp<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+    <span class="token function">thumbMouseMove</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">let</span> progress <span class="token operator">=</span>
+        <span class="token punctuation">(</span>e<span class="token punctuation">.</span>clientX <span class="token operator">-</span> <span class="token keyword">this</span><span class="token punctuation">.</span>initClientX <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>initOffsetX<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>progress<span class="token punctuation">.</span>clientWidth
+      progress <span class="token operator">=</span> progress <span class="token operator">&lt;=</span> <span class="token number">1</span> <span class="token operator">?</span> <span class="token punctuation">(</span>progress <span class="token operator">&gt;=</span> <span class="token number">0</span> <span class="token operator">?</span> progress <span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token number">1</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>progress <span class="token operator">=</span> progress <span class="token operator">*</span> <span class="token number">100</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+    <span class="token function">thumbMouseUp</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>audio<span class="token punctuation">.</span>currentTime <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>duration <span class="token operator">*</span> <span class="token keyword">this</span><span class="token punctuation">.</span>progress<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">100</span>
+      document<span class="token punctuation">.</span><span class="token function">removeEventListener</span><span class="token punctuation">(</span><span class="token string">'mousemove'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>thumbMouseMove<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+      document<span class="token punctuation">.</span><span class="token function">removeEventListener</span><span class="token punctuation">(</span><span class="token string">'mouseup'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>thumbMouseUp<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+    <span class="token comment">// 格式化分钟</span>
+    <span class="token function">formatDuration</span><span class="token punctuation">(</span><span class="token parameter">duration</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>duration <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> minute <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>duration <span class="token operator">/</span> <span class="token number">60</span><span class="token punctuation">)</span>
+        minute <span class="token operator">=</span> minute <span class="token operator">&lt;</span> <span class="token number">10</span> <span class="token operator">?</span> <span class="token string">'0'</span> <span class="token operator">+</span> <span class="token function">String</span><span class="token punctuation">(</span>minute<span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token function">String</span><span class="token punctuation">(</span>minute<span class="token punctuation">)</span>
+        <span class="token keyword">let</span> second <span class="token operator">=</span> duration <span class="token operator">%</span> <span class="token number">60</span>
+        second <span class="token operator">=</span> second <span class="token operator">&lt;</span> <span class="token number">10</span> <span class="token operator">?</span> <span class="token string">'0'</span> <span class="token operator">+</span> <span class="token function">String</span><span class="token punctuation">(</span>second<span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token function">String</span><span class="token punctuation">(</span>second<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> minute <span class="token operator">+</span> <span class="token string">':'</span> <span class="token operator">+</span> second
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">'00:00'</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>scss<span class="token punctuation">&quot;</span></span> <span class="token attr-name">scoped</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+<span class="token atrule"><span class="token rule">@import</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">'//at.alicdn.com/t/font_2436495_253nh3fvpe5.css'</span><span class="token punctuation">)</span></span><span class="token punctuation">;</span></span>
+
+<span class="token selector">.audio-play</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 32px<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #F7F7F7<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 16px<span class="token punctuation">;</span>
+  <span class="token property">padding-right</span><span class="token punctuation">:</span> 16px<span class="token selector">;
+  
+  div</span> <span class="token punctuation">{</span>
+    <span class="token property">box-sizing</span><span class="token punctuation">:</span> border-box<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.audio-controls</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.audio-play-icons__text</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 12px<span class="token punctuation">;</span>
+  <span class="token property">line-height</span><span class="token punctuation">:</span> 18px<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #FFFFFF<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.audio-play-icons</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token property">justify-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token property">cursor</span><span class="token punctuation">:</span> pointer<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 12px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 24px<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 24px<span class="token selector">;
+
+  i</span> <span class="token punctuation">{</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> 24px<span class="token selector">;
+
+    &amp;.is-disabled</span> <span class="token punctuation">{</span>
+      <span class="token property">color</span><span class="token punctuation">:</span> #999999<span class="token punctuation">;</span>
+      <span class="token property">cursor</span><span class="token punctuation">:</span> not-allowed<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.audio-progress</span> <span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 4px<span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 0 8px<span class="token punctuation">;</span>
+  <span class="token property">flex-grow</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+  <span class="token property">cursor</span><span class="token punctuation">:</span> pointer<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.audio-progress__background</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #DDDDDD<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 4px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.audio-progress__track</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #466796<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 4px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.audio-progress__thumb</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 12px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 12px<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 2px solid #FFFFFF<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #466796<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> -4px<span class="token punctuation">;</span>
+  <span class="token property">margin-left</span><span class="token punctuation">:</span> -5px<span class="token punctuation">;</span>
+  <span class="token property">box-shadow</span><span class="token punctuation">:</span> 0 0 4px 0 <span class="token function">rgba</span><span class="token punctuation">(</span>0<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0.2<span class="token punctuation">)</span><span class="token selector">;
+
+  &amp;.is-disabled</span> <span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> #999999<span class="token punctuation">;</span>
+    <span class="token property">cursor</span><span class="token punctuation">:</span> not-allowed<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.font-small</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 12px<span class="token punctuation">;</span>
+  <span class="token property">line-height</span><span class="token punctuation">:</span> 18px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.flex-center</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.color-primary</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #466796<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></div> <footer class="page-edit" data-v-a41eed80><!----> <!----></footer> <!---->  <div class="theme-change" data-v-66feac70 data-v-a41eed80><img src="https://img-cdn.wezhuiyi.com/yi-blog/light-mode.svg" alt data-v-66feac70></div></main></div><div class="global-ui"></div></div>
+    <script src="/yi-blog/assets/js/app.6f6874a9.js" defer></script><script src="/yi-blog/assets/js/4.717f7ba6.js" defer></script><script src="/yi-blog/assets/js/2.6b638d4f.js" defer></script><script src="/yi-blog/assets/js/44.1754abd8.js" defer></script><script src="/yi-blog/assets/js/14.5b360613.js" defer></script>
+  </body>
+</html>
